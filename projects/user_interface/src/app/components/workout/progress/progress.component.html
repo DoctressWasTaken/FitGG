@@ -1,0 +1,41 @@
+<div id="progress">
+
+  <mat-progress-bar
+    class="divider"
+    id="warmup"
+    [mode]="'buffer'"
+    [value]="30"
+    [bufferValue]="100">
+  </mat-progress-bar>
+
+  <mat-progress-bar
+    class="divider"
+    id="workout"
+    [mode]="'buffer'"
+    [value]="0"
+    [bufferValue]="100">
+  </mat-progress-bar>
+
+  <mat-progress-bar
+    class="divider"
+    id="stretching"
+    [mode]="'buffer'"
+    [value]="0"
+    [bufferValue]="100">
+  </mat-progress-bar>
+  <ng-container *ngFor="let workout of workout_data">
+      <div class="connector"
+           [ngStyle]="workout.style" [ngClass]="'connector-' + workout.connector_class">
+
+    <mat-expansion-panel class="task-panel">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{workout.task.movement.movement_name.split(' - ')[0]}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+</div>
+</ng-container>
+
+</div>

@@ -1,0 +1,64 @@
+{
+  "manifest_version": 1,
+  "type": "WebApp",
+  "meta": {
+    "name": "FitGG",
+    "author": "Doctress",
+    "version": "0.0.1",
+    "minimum-overwolf-version": "0.204.0.1",
+    "minimum-gep-version": "128.0.0.1",
+    "description": "For your health.",
+    "dock_button_title": "FitGG",
+    "icon": "assets/logo_placeholder.png",
+    "icon_gray": "assets/logo_placeholder.png",
+    "launcher_icon": "assets/logo_placeholder.ico",
+    "splash_image": "assets/logo_placeholder.png",
+    "window_icon": "assets/logo_placeholder.png"
+  },
+  "max_rotation_log_files": 20,
+  "data": {
+    "game_targeting": {
+      "type": "dedicated",
+      "game_ids": [5426]
+    },
+    "game_events": [5426],
+    "launch_events": [
+      {
+        "event": "GameLaunch",
+        "event_data": {
+          "game_ids": [
+            5426
+          ]
+        },
+        "start_minimized": false
+      }],
+    "start_window": "background",
+    "enable_top_isolation": true,
+    "windows": {
+      "background": {
+        "size": {
+          "height": 500,
+          "width": 500
+        },
+        "file": "index.html",
+        "is_background_page": true
+        //"debug_url": "http://localhost:4200"
+      },
+      "user_interface": {
+        "desktop_only": true,
+        "native_window": true,
+        "size": {
+          "height": 525,
+          "width": 800
+        },
+        "file": "user_interface/index.html",
+        "is_background_page": false,
+        //"debug_url": "http://localhost:4200"
+      }
+    },
+    "enable_top_isolated_sites_console": false,
+    "force_browser": "overwolf",
+    "disable_log_limit": false,
+    "process_name": "my sample app"
+  }
+}

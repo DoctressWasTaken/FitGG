@@ -1,0 +1,71 @@
+<mat-grid-list cols="12" rowHeight="370px">
+  <mat-grid-tile colspan="4">
+    <div><!-- To remove the display:flex from the cards !-->
+      <mat-card appearance="outlined" class="selector" id="area_select">
+        <mat-card-subtitle>Body Area</mat-card-subtitle>
+        <mat-card-content style="padding: 5px; padding-bottom: 0;">
+          <div style="transform: scale(0.8); transform-origin: top left; width: 125%;">
+            <mat-chip-listbox multiple="true">
+              <mat-chip-option (selectionChange)="change_selection(br, selected_area, $event)"
+                               *ngFor="let br of content.bodyRegions">
+                {{br.body_region}}
+              </mat-chip-option>
+            </mat-chip-listbox>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card appearance="outlined" class="selector" id="equipment_select">
+        <mat-card-subtitle>Available Equipment</mat-card-subtitle>
+        <mat-card-content style="padding: 5px; padding-bottom: 0;">
+          <div style="transform: scale(0.8); transform-origin: top left; width: 125%;">
+            <mat-chip-listbox multiple="true">
+              <mat-chip-option (selectionChange)="change_selection(eq, selected_equip, $event)"
+                               *ngFor="let eq of content.equipment">
+                {{eq.name}}
+              </mat-chip-option>
+            </mat-chip-listbox>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card appearance="outlined" class="selector" id="length_select">
+        <mat-card-subtitle>No. Exercises</mat-card-subtitle>
+        <mat-card-content style="padding: 0; padding-left: 15px;">
+          <mat-slider min="5" max="15" step="5" showTickMarks discrete [displayWith]="contentCalc.bind(this)">
+            <input matSliderThumb>
+          </mat-slider>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="8" style="padding-right: 20px;">
+    <div style="padding: 20px; transform: scale(0.8); transform-origin: top left; width: 125%;">
+      <mat-card appearance="outlined" class="selector" id="workout-tasks">
+        <mat-card-subtitle>Exercises</mat-card-subtitle>
+        <mat-card-content style="padding: 0; padding-left: 15px;">
+          <mat-chip-set
+            class="example-chip"
+            cdkDropList
+            cdkDropListOrientation="horizontal"
+            (cdkDropListDropped)="drop($event)">
+            <mat-chip
+              class="example-box"
+              cdkDrag
+              *ngFor="let task of tasks">
+              {{task.movement_name}}
+            </mat-chip>
+          </mat-chip-set>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<button mat-raised-button color="primary" id="generate"
+        (click)="generateWorkout()"
+>Generate Workout
+</button>
+<button mat-raised-button color="primary" id="start" [disabled]="tasks.length === 0"
+        (click)="submit()"
+>Submit
+</button>
+

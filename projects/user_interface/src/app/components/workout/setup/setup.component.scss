@@ -1,0 +1,28 @@
+.muscle_selection {
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.selector {
+  margin: 10px 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 0;
+  padding: 5px 10px 0;
+
+  &#equipment_select {
+  }
+
+  &#length_select {
+  }
+}
+
+.task_card {
+  margin: 1%;
+  width: 48%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 0;
+  padding: 5px 10px 0;
+  float: left;
+}

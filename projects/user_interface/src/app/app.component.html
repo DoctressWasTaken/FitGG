@@ -1,0 +1,52 @@
+<div id="draggable">
+  <mat-grid-list cols="10" id="menu" rowHeight="25px">
+    <mat-grid-tile [colspan]="10">
+      <div>
+        <button mat-button color="primary" id="closeButton">
+          <mat-icon style="font-weight: bold">close</mat-icon>
+        </button>
+        <button mat-button color="primary" id="minimizeButton">
+          <mat-icon style="font-weight: bold">minimize</mat-icon>
+        </button>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" rowspan="2">
+      <div class="workout">
+        <button *ngIf="!backend.workout.exists"
+                (click)="nav('/setup')"
+                mat-raised-button color="primary">New Workout
+        </button>
+        <ng-container *ngIf="backend.workout.exists">
+          <button
+            (click)="nav('/workout')"
+            mat-raised-button color="primary" routerLink="/workout">
+            Workout
+          </button>
+          <mat-progress-bar mode="indeterminate" style="position: absolute; top: 0; z-index: 15;"
+                            color="accent"></mat-progress-bar>
+        </ng-container>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="8" rowspan="2">
+      <nav mat-tab-nav-bar [tabPanel]="router_loc">
+        <a mat-tab-link *ngFor="let link of tabs"
+           (click)="update(link[1])"
+           [active]="activeLink == link[1]">{{link[0]}}</a>
+        <a mat-tab-link (click)="update('/profile')"
+           [active]="activeLink == '/profile'">
+          <button mat-icon-button color="primary">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <span style="color: black;">
+            Profile
+          </span>
+        </a>
+      </nav>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<div id="content">
+  <mat-tab-nav-panel #router_loc>
+    <router-outlet></router-outlet>
+  </mat-tab-nav-panel>
+</div>
