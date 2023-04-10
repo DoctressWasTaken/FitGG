@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Movement} from "../classes/data";
+import {Subject} from "rxjs";
 
 declare interface Task {
   movement: Movement;
@@ -14,12 +15,22 @@ declare interface Task {
 })
 export class WorkoutManagementService {
 
-  exists: boolean = false;
+  status: string | null = null;
+  active: boolean = false;
   tasks: Task[] | null = null;
+
+  redirect: Subject<void> = new Subject<void>();
 
   constructor() {
   }
 
+  async init() {
+    return this;
+  }
+
+  goToWorkout() {
+    this.redirect.next();
+  }
 
   create(movements: Movement[]) {
     let tasks: Task[] = [];
@@ -33,6 +44,6 @@ export class WorkoutManagementService {
       })
     }
     this.tasks = tasks;
-    this.exists = true
+    this.active = true
   }
 }

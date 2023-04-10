@@ -16,12 +16,28 @@
     "window_icon": "assets/logo_placeholder.png"
   },
   "max_rotation_log_files": 20,
+  "permissions": [
+    "Hotkeys"
+  ],
   "data": {
+    "hotkeys": {
+      "show_FitGG": {
+        "title": "Show/Hide the ingame Overlay",
+        "action-type": "toggle",
+        "default": "Shift+F",
+        "passthrough": false,
+        "game_targeting": "all"
+      }
+    },
     "game_targeting": {
       "type": "dedicated",
-      "game_ids": [5426]
+      "game_ids": [
+        5426
+      ]
     },
-    "game_events": [5426],
+    "game_events": [
+      5426
+    ],
     "launch_events": [
       {
         "event": "GameLaunch",
@@ -31,7 +47,8 @@
           ]
         },
         "start_minimized": false
-      }],
+      }
+    ],
     "start_window": "background",
     "enable_top_isolation": true,
     "windows": {
@@ -44,15 +61,28 @@
         "is_background_page": true
         //"debug_url": "http://localhost:4200"
       },
-      "user_interface": {
+      "interface": {
         "desktop_only": true,
         "native_window": true,
+        "resizable": false,
         "size": {
-          "height": 525,
-          "width": 800
+          "height": 500,
+          "width": 900
         },
-        "file": "user_interface/index.html",
-        "is_background_page": false,
+        "file": "index.html",
+        "is_background_page": false
+        //"debug_url": "http://localhost:4200"
+      },
+      "overlay": {
+        "desktop_only": true,
+        "native_window": true,
+        "resizable": false,
+        "size": {
+          "height": 300,
+          "width": 300
+        },
+        "file": "index.html",
+        "is_background_page": false
         //"debug_url": "http://localhost:4200"
       }
     },

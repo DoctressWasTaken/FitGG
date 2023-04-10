@@ -1,3 +1,4 @@
-AAAA
-
-{{details}}
+<ng-container [ngSwitch]="current_window">
+  <app-user-interface *ngSwitchCase="'interface'"></app-user-interface>
+  <app-overlay *ngSwitchCase="'overlay'"></app-overlay>
+</ng-container>

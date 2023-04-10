@@ -29,9 +29,12 @@
               "src/manifest.json"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.scss"],
-            "scripts": []
+              "./node_modules/materialize-css/dist/css/materialize.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "./node_modules/materialize-css/dist/js/materialize.js",
+            ]
           },
           "configurations": {
             "production": {
@@ -39,7 +42,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -141,7 +144,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",

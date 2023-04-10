@@ -1,0 +1,46 @@
+div#page {
+  position: absolute;
+  height: 35px;
+  width: 100%;
+  top: 0;
+  right: 0;
+
+  #win-control {
+    a {
+      float: right;
+      background-color: transparent;
+      border-radius: 0;
+    }
+  }
+}
+
+.navigator {
+  width: 60vw;
+  left: 20vw;
+  bottom: 0;
+  position: fixed;
+  background-color: transparent;
+  box-shadow: none;
+
+}
+
+.navigator-labels {
+  font-size: 20px;
+}
+
+.profile {
+  font-size: 35px;
+  font-weight: 200;
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  width: 35px;
+  height: 35px;
+}
+
+.content-wrapper {
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 15px 15px 60px;
+  overflow: hidden;
+}

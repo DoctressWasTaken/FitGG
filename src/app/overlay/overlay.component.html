@@ -1,0 +1,12 @@
+<div id="page" class="content-wrapper">
+  <mat-accordion>
+
+    <button mat-flat-button color="basic" (click)="link.workout.goToWorkout()">New Workout</button>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>Recent Workouts</mat-expansion-panel-header>
+      <button mat-stroked-button color="primary" *ngIf="true">Workout 1</button>
+      <button mat-stroked-button color="primary" *ngIf="true">Workout 2</button>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

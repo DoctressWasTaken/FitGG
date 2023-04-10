@@ -1,0 +1,62 @@
+<div id="page-holder">
+
+  <div class="content-wrapper" id="body-region">
+    <mat-form-field appearance="outline" style="width:100%; margin-bottom: -1.25em">
+      <mat-label>Body Region</mat-label>
+      <mat-select [formControl]="bodyRegion"
+                  multiple>
+        <mat-option *ngFor="let region of bodyRegionList | keyvalue"
+                    [value]="region.key">{{region.value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="content-wrapper" id="workout-length">
+    <label>Workout Length</label>
+    <mat-slider min="5" max="20" step="1" discrete [displayWith]="labelWorkoutLength">
+      <input matSliderThumb [value]="workoutLength" (valueChange)="update_workout($event)" [(ngModel)]="workoutLength">
+    </mat-slider>
+  </div>
+
+  <div class="content-wrapper" id="muscle-groups">
+    <label>Muscle Groups</label>
+    <div class="chipset">
+      <mat-chip-listbox aria-label="Fish selection" [multiple]="true">
+
+        <mat-chip-option [selected]="true">Shoulder</mat-chip-option>
+        <mat-chip-option [selected]="true">Back</mat-chip-option>
+        <mat-chip-option [selected]="true">Chest</mat-chip-option>
+        <mat-chip-option [selected]="true">Foot</mat-chip-option>
+        <mat-chip-option [selected]="true">Forearm</mat-chip-option>
+        <mat-chip-option [selected]="true">Legs</mat-chip-option>
+        <mat-chip-option [selected]="true">Neck</mat-chip-option>
+        <mat-chip-option [selected]="true">Abs</mat-chip-option>
+        <mat-chip-option [selected]="true">Hip</mat-chip-option>
+        <mat-chip-option [selected]="true">Wrist Extensors</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+  </div>
+
+  <div class="content-wrapper row" id="movements">
+    <div class="scroll-wrapper">
+      <div class="grid-wrapper">
+
+        <ng-container *ngFor="let n of temp_list">
+          <mat-card class="movement">
+            <mat-card-header>
+              <mat-card-title>Cobra</mat-card-title>
+              <mat-card-subtitle>Abs Stretch</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+              <button mat-button>INFO</button>
+            </mat-card-actions>
+            <button mat-icon-button style="color: red; position: absolute; top: 5px; right: 5px;">
+              <mat-icon>refresh</mat-icon>
+            </button>
+          </mat-card>
+        </ng-container>
+      </div>
+    </div>
+    <label>Movements</label>
+  </div>
+</div>

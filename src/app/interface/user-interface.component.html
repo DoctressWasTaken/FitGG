@@ -1,0 +1,24 @@
+<div id="page">
+  <div id="win-control">
+    <a class="waves-effect waves-light btn btn-flat btn-small"><i class="material-icons center">close</i></a>
+    <a class="waves-effect waves-light btn btn-flat btn-small"><i class="material-icons center">minimize</i></a>
+  </div>
+</div>
+<div class="content-wrapper">
+
+  <router-outlet></router-outlet>
+
+</div>
+
+<!--(selectedIndexChange)="updateTab($event)"
+!-->
+<nav mat-tab-nav-bar
+     class="navigator" headerPosition="below">
+  <a mat-tab-link
+     *ngFor="let tab of tabs"
+     labelClass="navigator-labels"
+     [routerLink]="tab.uri"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive"
+     label="Collection">{{tab.tab}}</a>
+</nav>

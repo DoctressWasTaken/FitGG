@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,11 +6,19 @@ import { Injectable } from '@angular/core';
 export class AccountManagementService {
 
   session: boolean = false;
+  userId!: string;
 
+  avatar!: string;
 
   constructor() {
-    // TODO: Read preexisting session
-    // TODO: Get user ID from overwolf
+  }
+
+  async init() {
+    overwolf.profile.refreshUserProfile((user) => {
+      this.userId = <string>user.displayName;
+      this.avatar = <string>user.avatar;
+    })
+    return this;
   }
 
   login() { // TODO: Method

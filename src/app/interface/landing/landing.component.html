@@ -1,0 +1,19 @@
+<table id="content-table">
+  <tr>
+    <td rowspan="3" class="content-wrapper">
+      <app-active-workout-landing *ngIf="link.workout.active"></app-active-workout-landing>
+
+      <button mat-raised-button
+              routerLink="/workout"
+              color="primary" *ngIf="!link.workout.active">New Workout</button>
+
+    </td>
+    <td rowspan="2" class="content-wrapper" app-calendar>
+    </td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td class="content-wrapper" style="position:relative;" app-sparknote>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,144 @@
+#page-holder {
+  position: absolute;
+  top: 20px;
+
+  .content-wrapper {
+    height: 100%;
+    border-radius: 4px;
+    background: rgba(124, 114, 106, 0.3);
+    text-align: center;
+    display: flex;
+    vertical-align: middle;
+    position: absolute;
+    padding: 15px;
+
+    &#body-region {
+      top: 15px;
+      height: 90px;
+      width: 250px;
+
+    }
+
+    &#workout-length {
+      width: 250px;
+      height: 90px;
+      top: 120px;
+
+      label {
+        color: black;
+        font-size: 1.1rem;
+        bottom: 5px;
+        right: 15px;
+        position: absolute;
+        font-weight: 100;
+      }
+
+      mat-slider {
+        height: 48px;
+        width: 100%;
+        white-space: nowrap;
+
+        input {
+          margin: 0;
+          position: absolute;
+        }
+      }
+    }
+
+    &#muscle-groups {
+      padding: 10px;
+      width: 605px;
+      height: 90px;
+      top: 15px;
+      left: 265px;
+
+      label {
+        color: black;
+        font-size: 1.1rem;
+        bottom: 5px;
+        right: 15px;
+        position: absolute;
+        font-weight: 100;
+      }
+
+      div.chipset {
+        width: calc(605px / 0.8);
+        height: calc(90px / 0.8);
+        transform: scale(0.8);
+        transform-origin: left top;
+        position: absolute;
+
+        mat-chip-option {
+          border-radius: 5px;
+        }
+      }
+    }
+
+    &#movements {
+      width: 605px;
+      height: 300px;
+      top: 120px;
+      left: 265px;
+
+      .scroll-wrapper {
+        overflow-y: scroll;
+        margin-bottom: 10px;
+
+
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+
+        .grid-wrapper {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 10px;
+          transform: scale(0.75);
+          transform-origin: top left;
+
+          .movement {
+            width: 183px;
+            height: 115px;
+
+            mat-card-header {
+              padding: 8px 8px 0;
+            }
+          }
+        }
+      }
+
+      label {
+        color: black;
+        font-size: 1.1rem;
+        bottom: 5px;
+        right: 15px;
+        position: absolute;
+        font-weight: 100;
+      }
+    }
+  }
+
+  #content-table {
+    height: 100%;
+    width: 100%;
+    border-spacing: 15px;
+    border-collapse: separate;
+    table-layout: fixed;
+
+    tr {
+      height: calc(100% / 4);
+
+      td.content-wrapper {
+        height: 100%;
+        border-radius: 4px;
+        background: rgb(255 206 165 / 30%);
+        text-align: center;
+        vertical-align: middle;
+
+
+      }
+    }
+  }
+}
+
+

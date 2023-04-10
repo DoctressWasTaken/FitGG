@@ -22,10 +22,14 @@ export class OverwolfApiService {
     this.game_services = {
       5426: new LeagueOfLegends(5426)
     }
-    let self = this;
     // Start here
+  }
+
+  async init() {
+    let self = this;
     overwolf.games.onGameInfoUpdated.addListener((res) => this.updateGame(res, true));
-    overwolf.games.getRunningGameInfo((res) => self.updateGame(res, false));
+    overwolf.games.getRunningGameInfo((res) => this.updateGame(res, false));
+    return this;
   }
 
   updateGame(gameInfoResult: any, launched: boolean) {
