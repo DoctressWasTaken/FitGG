@@ -1,0 +1,51 @@
+div.container-flex {
+  height: 100%;
+
+  .row {
+    height: calc(100%);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: row;
+
+    .col {
+      padding: 10px;
+
+      div.panel {
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+        background: rgb(255 206 165 / 30%);
+
+        &#content {
+          overflow-y: scroll;
+
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+
+        &.configs {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-content: center;
+          justify-content: center;
+          align-items: flex-start;
+
+          .input-field {
+            margin-top: 2rem;
+            margin-bottom: 0;
+
+            label {
+              color: #444;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

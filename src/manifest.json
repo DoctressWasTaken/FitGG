@@ -64,9 +64,17 @@
       "interface": {
         "desktop_only": true,
         "native_window": true,
-        "resizable": false,
+        "resizable": true,
         "size": {
           "height": 500,
+          "width": 900
+        },
+        "min_size": {
+          "height": 500,
+          "width": 400
+        },
+        "max_size": {
+          "height": 750,
           "width": 900
         },
         "file": "index.html",
@@ -81,6 +89,7 @@
           "height": 300,
           "width": 300
         },
+
         "file": "index.html",
         "is_background_page": false
         //"debug_url": "http://localhost:4200"

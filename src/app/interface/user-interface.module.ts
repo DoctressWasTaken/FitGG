@@ -29,6 +29,9 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatSliderModule} from "@angular/material/slider";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatCardModule} from "@angular/material/card";
+import { DetailsComponent } from './workout/details/details.component';
+import { WorkoutComponent } from './workout/workout.component';
+import { WorkoutListComponent } from './_utils/workout-list/workout-list.component';
 
 
 @NgModule({
@@ -45,6 +48,9 @@ import {MatCardModule} from "@angular/material/card";
     CalendarComponent,
     ActiveWorkoutLandingComponent,
     WorkoutCreatorComponent,
+    DetailsComponent,
+    WorkoutComponent,
+    WorkoutListComponent,
 
   ],
     imports: [
@@ -62,8 +68,8 @@ import {MatCardModule} from "@angular/material/card";
         MatPaginatorModule,
         MatButtonModule,
         MatSortModule,
-        RouterLink,
         RouterModule,
+        RouterLink,
         NgxEchartsModule.forRoot({
             echarts: () => import ('echarts')
         }),

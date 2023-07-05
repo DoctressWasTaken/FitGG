@@ -14,13 +14,22 @@ div#page {
   }
 }
 
-.navigator {
-  width: 60vw;
-  left: 20vw;
-  bottom: 0;
+div.navigator {
+
   position: fixed;
-  background-color: transparent;
-  box-shadow: none;
+  width: 100vw;
+  bottom: -10px;
+  background-color: rgba(255, 255, 255, 0.2);
+
+  div.row {
+    margin-bottom: 0;
+
+    nav.navigator {
+      max-width: 540px;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
 
 }
 
@@ -38,9 +47,10 @@ div#page {
   height: 35px;
 }
 
-.content-wrapper {
+#content {
   height: 100vh;
   box-sizing: border-box;
-  padding: 15px 15px 60px;
+  padding: 35px 15px 60px;
   overflow: hidden;
+  max-width: 100%;
 }

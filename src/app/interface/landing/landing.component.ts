@@ -10,8 +10,9 @@ import {LinkManagerService} from "../../services/link-manager.service";
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-
+  grid = document.querySelector('.grid');
   link: LinkManagerService;
+  packry!: any;
 
   constructor(private _link: LinkManagerService) {
 
@@ -20,6 +21,7 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

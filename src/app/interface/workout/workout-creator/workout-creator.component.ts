@@ -1,5 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Form, FormControl} from "@angular/forms";
+import {Movement} from "../../../classes/data";
+import {Subject} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 declare var M;
 
@@ -9,7 +12,7 @@ declare var M;
   styleUrls: ['./workout-creator.component.scss']
 })
 export class WorkoutCreatorComponent implements OnInit {
-  bodyRegion = new FormControl('');
+  bodyRegion!: string;
 
   exerciseLength: number = 10;
 
@@ -20,14 +23,31 @@ export class WorkoutCreatorComponent implements OnInit {
     'legs': 'Legs'
   };
   workoutLength: number = 8;
+  selected: Subject<Movement | null> = new Subject<Movement | null>();
 
   temp_list: string[] = [];
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
     this.update_workout(this.workoutLength);
   }
 
+  setNext() {
+    this.selected.next(null);
+  }
+
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.bodyRegion = params.get('body-region')!;
+      console.log(this.bodyRegion);
+    })
+  }
+
+  get_previous() {
+    return null
+  }
+
+  get_next() {
+    return null
   }
 
   update_workout(length: number) {

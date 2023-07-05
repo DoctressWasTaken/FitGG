@@ -1,16 +1,5 @@
 <div id="page-holder">
 
-  <div class="content-wrapper" id="body-region">
-    <mat-form-field appearance="outline" style="width:100%; margin-bottom: -1.25em">
-      <mat-label>Body Region</mat-label>
-      <mat-select [formControl]="bodyRegion"
-                  multiple>
-        <mat-option *ngFor="let region of bodyRegionList | keyvalue"
-                    [value]="region.key">{{region.value}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
   <div class="content-wrapper" id="workout-length">
     <label>Workout Length</label>
     <mat-slider min="5" max="20" step="1" discrete [displayWith]="labelWorkoutLength">
@@ -48,7 +37,7 @@
               <mat-card-subtitle>Abs Stretch</mat-card-subtitle>
             </mat-card-header>
             <mat-card-actions>
-              <button mat-button>INFO</button>
+              <button mat-button (click)="setNext()">INFO</button>
             </mat-card-actions>
             <button mat-icon-button style="color: red; position: absolute; top: 5px; right: 5px;">
               <mat-icon>refresh</mat-icon>
@@ -59,4 +48,8 @@
     </div>
     <label>Movements</label>
   </div>
+
+  <button mat-raised-button color="warn" id="submit">Submit</button>
+
 </div>
+<app-details [previous]="get_previous" [next]="get_next" [current]="selected"></app-details>

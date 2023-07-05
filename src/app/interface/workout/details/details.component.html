@@ -1,0 +1,44 @@
+<div id="filter" *ngIf="visible">
+  <div id="content" [class]="previous !== undefined? 'navs': ''">
+    <div class="details" #details>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="gif" #gif>
+    </div>
+
+  </div>
+  <button mat-mini-fab color="primary"
+          (click)="visible = !visible"
+          style="top: 15px; right: 15px">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <button mat-mini-fab color="primary"
+          *ngIf="previous !== undefined"
+          (click)="click_prev()"
+          style="left: 15px;" class="nav" [disabled]="prev_mov == null">
+    <mat-icon>navigate_before</mat-icon>
+  </button>
+  <button mat-mini-fab color="primary"
+          *ngIf="previous !== undefined"
+          (click)="click_next()"
+          style="right: 15px;" class="nav" [disabled]="next_mov == null">
+    <mat-icon>navigate_next</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,46 @@
+div#filter {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(110, 110, 110, 0.4);
+  position: absolute;
+
+  .nav {
+    position: absolute;
+    top: calc(50% + 28px);
+  }
+
+  div#content {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    &.navs {
+      transform: scale(0.9);
+    }
+
+
+    >div {
+      display: flex;
+      margin: 40px 40px 70px;
+      box-shadow: 2px 4px 11px 3px black;
+
+      &.details {
+        transform: perspective(500px) rotateY(0deg) rotateX(0deg);
+      }
+
+      &.gif {
+        transform: perspective(500px) rotateY(0deg) rotateX(0deg);
+        background-image: url("https://material.angular.io/assets/img/examples/shiba2.jpg");
+        background-size: cover;
+      }
+    }
+  }
+}

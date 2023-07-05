@@ -13,6 +13,7 @@ declare var overwolf: any;
 })
 export class UserInterfaceComponent implements OnInit {
 
+
   tabs = [
     {tab: "Home", uri: ""},
     {tab: "Collection", uri: "collection"},
@@ -39,7 +40,7 @@ export class UserInterfaceComponent implements OnInit {
         // @ts-ignore
         window_id: info.window.id,
         width: 900,
-        height: 500,
+        height: 550,
         auto_dpi_resize: true
       }, () => {
         console.log("Updated size", info);

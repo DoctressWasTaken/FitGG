@@ -4,7 +4,7 @@
     <a class="waves-effect waves-light btn btn-flat btn-small"><i class="material-icons center">minimize</i></a>
   </div>
 </div>
-<div class="content-wrapper">
+<div id="content">
 
   <router-outlet></router-outlet>
 
@@ -12,13 +12,19 @@
 
 <!--(selectedIndexChange)="updateTab($event)"
 !-->
-<nav mat-tab-nav-bar
-     class="navigator" headerPosition="below">
-  <a mat-tab-link
-     *ngFor="let tab of tabs"
-     labelClass="navigator-labels"
-     [routerLink]="tab.uri"
-     routerLinkActive #rla="routerLinkActive"
-     [active]="rla.isActive"
-     label="Collection">{{tab.tab}}</a>
-</nav>
+<div class="container navigator">
+  <div class="row">
+    <div class="col s12" style="display:flex; justify-content: center">
+      <nav mat-tab-nav-bar
+           class="navigator" headerPosition="below">
+        <a mat-tab-link
+           *ngFor="let tab of tabs"
+           labelClass="navigator-labels"
+           [routerLink]="tab.uri"
+           routerLinkActive #rla="routerLinkActive"
+           [active]="rla.isActive"
+           label="Collection">{{tab.tab}}</a>
+      </nav>
+    </div>
+  </div>
+</div>
